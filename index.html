@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .div_clicked {
+            background-color: #020202;
+        }
+    </style>
+    <div id="app" class="container">
+        <div class=" grid grid-cols-2 gap-8">
+            <!-- левый блок -->
+            <div>
+                <div v-if="!newItems.length">нет записей</div>
+                <div v-if="newItems.length <= 6">
+
+
+                    <div v-for="newItem in newItems">
+                        {{ newItem.id }}
+                        {{ newItem.name }}
+                    </div>
+
+
+
+                   
+                </div>
+                <div v-for="newItem in newItems" v-else="newItems.lenght >= 6">
+
+                    а все больше нельзя добавить
+                </div>
+            </div>
+
+
+
+            <!-- блок право -->
+            <div>
+                <div v-if="!newUsers.length">нет записей</div>
+                <div v-if="newUsers.length <= 2">
+
+
+                    <div v-for="newUser in newUsers">
+                        {{ newUser.id }}
+                        {{ newUser.name }}
+                    </div>
+
+
+
+                  
+                </div>
+             
+            </div>
+
+        </div>
+
+
+        <div class=" grid grid-cols-2 gap-8">
+            <div class="grid grid-cols-2 gap-4">
+
+                <div class="border-solid border-black border-2" v-for="item in items" :key="item.id"
+                    @click="add1(item.id)"  >
+                    <div> {{ item.id }}</div>
+                    <div>{{ item.name }}</div>
+                </div>
+
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+
+                <div class="border-solid border-black border-2" v-for="user in users" :key="user.id"   @click="addRight(item.id)" >
+                    <div> {{ user.id }}</div>
+                    <div>{{ user.name }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+
+
+    </script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>
