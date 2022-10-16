@@ -74,7 +74,7 @@ const app = Vue.createApp({
             newItems: [],
 
             newUsers: [],
-           
+
         }
 
     },
@@ -88,18 +88,24 @@ const app = Vue.createApp({
 
     methods: {
         addLeft: function (id) {
-            const names = this.items.map(el => el.id);
-          const index = names.indexOf(id)
-          this.newItems.push(this.items[index])
-          this.items = this.items.filter(item => item.id !== id)
-          },
+            if (this.newItems.length !==6){    const names = this.items.map(el => el.id);
+            const index = names.indexOf(id)
+            this.newItems.push(this.items[index])
+            this.items = this.items.filter(item => item.id !== id)}
+            else {
+                alert ("больше нельзя добавить")
+            }
+        
+            
+        },
         addRight: function (id) {
+            this.newUsers = []
             const ids = this.users.map(el => el.id);
             const index = ids.indexOf(id)
             // console.log(index)
             this.newUsers.push(this.users[index])
-             console.log(this.newUsers)
-            //  this.users = this.users.filter(item => item.id !== id)
+            console.log(this.newUsers)
+            // this.users = this.users.filter(item => item.id !== id)
 
 
         }

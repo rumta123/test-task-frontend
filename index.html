@@ -11,6 +11,11 @@
 
 <body>
     <style>
+        body {
+            max-width: 80vw;
+            margin: 0 auto;
+        }
+
         .div_clicked {
             background-color: #020202;
         }
@@ -24,8 +29,9 @@
 
 
                     <div v-for="newItem in newItems">
-                        {{ newItem.id }}
+
                         {{ newItem.name }}
+
                     </div>
 
 
@@ -44,7 +50,7 @@
                 <div v-if="!newUsers.length">нет записей</div>
                 <div v-if="newUsers.length <= 1">
                     <div v-for="newUser in newUsers">
-                        {{ newUser.id }}
+
                         {{ newUser.name }}
                     </div>
 
