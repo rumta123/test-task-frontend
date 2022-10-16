@@ -23,12 +23,13 @@
     <div id="app" class="container">
         <div class=" grid grid-cols-2 gap-8">
             <!-- левый блок -->
-            <div>
+            <div >
                 <div v-if="!newItems.length">нет записей</div>
-                <div v-if="newItems.length <= 6">
+                <div v-if="newItems.length <= 6" style="display: flex;  gap: 10px;">
 
 
-                    <div v-for="newItem in newItems">
+                    <div class="border-solid border-black border-2"  v-for="newItem in newItems" style ="width: max-content;
+                    padding: 10px;">
 
                         {{ newItem.name }}
 
@@ -61,7 +62,7 @@
         </div>
 
 
-        <div class=" grid grid-cols-2 gap-8">
+        <div class=" grid grid-cols-2 gap-8" style="margin-top: 10px">
             <div class="grid grid-cols-2 gap-4">
 
                 <div class="border-solid border-black border-2" v-for="item in items" :key="item.id"
