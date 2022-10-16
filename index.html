@@ -30,10 +30,9 @@
 
 
 
-                   
+
                 </div>
                 <div v-for="newItem in newItems" v-else="newItems.lenght >= 6">
-
                     а все больше нельзя добавить
                 </div>
             </div>
@@ -43,19 +42,14 @@
             <!-- блок право -->
             <div>
                 <div v-if="!newUsers.length">нет записей</div>
-                <div v-if="newUsers.length <= 2">
-
-
+                <div v-if="newUsers.length <= 1">
                     <div v-for="newUser in newUsers">
                         {{ newUser.id }}
                         {{ newUser.name }}
                     </div>
 
-
-
-                  
                 </div>
-             
+
             </div>
 
         </div>
@@ -65,7 +59,7 @@
             <div class="grid grid-cols-2 gap-4">
 
                 <div class="border-solid border-black border-2" v-for="item in items" :key="item.id"
-                    @click="add1(item.id)"  >
+                    @click=" addLeft(item.id)">
                     <div> {{ item.id }}</div>
                     <div>{{ item.name }}</div>
                 </div>
@@ -73,7 +67,8 @@
             </div>
             <div class="grid grid-cols-2 gap-4">
 
-                <div class="border-solid border-black border-2" v-for="user in users" :key="user.id"   @click="addRight(item.id)" >
+                <div class="border-solid border-black border-2" v-for="user in users" :key="user.id"
+                    @click="addRight(user.id)">
                     <div> {{ user.id }}</div>
                     <div>{{ user.name }}</div>
                 </div>
@@ -88,8 +83,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@next"></script>
 
-
-    </script>
     <script src="script/script.js"></script>
 </body>
 

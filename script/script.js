@@ -74,8 +74,7 @@ const app = Vue.createApp({
             newItems: [],
 
             newUsers: [],
-            mystr:[],
-            my:0
+           
         }
 
     },
@@ -88,24 +87,19 @@ const app = Vue.createApp({
     },
 
     methods: {
-        add1: function (id) {
-            //  this.newItems.push(this.items[id - 1])
-            // this.items = this.items.filter(item => item.id !== id)
-            //  this.items = this.items.filter(item => item.id !== id)
-            //   this.items.splice(id-1, 1)
-
-        //  this.newItems.push(this.items[id-1])
-     //     this.mystr = this.items.filter(item => item.id == id )
-         // let index = this.items.map(el => el.name).indexOf(id);
-          
-         this.items =console.log(...this.items)
-        // this.my = _.findIndex(this.items, this.mystr)
-        // console.log(this.my)
-         
-
-        },
+        addLeft: function (id) {
+            const names = this.items.map(el => el.id);
+          const index = names.indexOf(id)
+          this.newItems.push(this.items[index])
+          this.items = this.items.filter(item => item.id !== id)
+          },
         addRight: function (id) {
-            this.newUsers.push(this.users.indexOf(id))
+            const ids = this.users.map(el => el.id);
+            const index = ids.indexOf(id)
+            // console.log(index)
+            this.newUsers.push(this.users[index])
+             console.log(this.newUsers)
+            //  this.users = this.users.filter(item => item.id !== id)
 
 
         }
